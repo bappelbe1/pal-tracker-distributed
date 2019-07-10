@@ -2,7 +2,7 @@ applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
   routes:
-  - route: registration-pal-bill-appelbe.apps.chicken.cfapps.io
+  - route: https://registration-pal-bill-appelbe.apps.chicken.cfapps.io
   memory: 245M
   instances: 1
   env:
