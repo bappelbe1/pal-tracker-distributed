@@ -2,6 +2,8 @@ package io.pivotal.pal.tracker.allocations;
 
 import org.springframework.web.client.RestOperations;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 public class ProjectClient {
 
     private final RestOperations restOperations;
@@ -11,7 +13,7 @@ public class ProjectClient {
         this.restOperations= restOperations;
         this.registrationServerEndpoint = registrationServerEndpoint;
     }
-
+    @HystrixCommand(fallbackMethod = "getProjectFromCache")
     public ProjectInfo getProject(long projectId) {
         return restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
     }
