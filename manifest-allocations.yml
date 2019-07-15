@@ -3,7 +3,7 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: https://allocations-pal-bill-appelbe.cfapps.io
-  memory: 245M
+  memory: 445M
   instances: 1
   env:
     REGISTRATION_SERVER_ENDPOINT: https://registration-pal-bill-appelbe.cfapps.io
