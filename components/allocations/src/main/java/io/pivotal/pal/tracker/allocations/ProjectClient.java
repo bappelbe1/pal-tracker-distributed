@@ -20,7 +20,7 @@ public class ProjectClient {
         this.restOperations= restOperations;
         this.registrationServerEndpoint = registrationServerEndpoint;
     }
-    
+
     @HystrixCommand(fallbackMethod = "getProjectFromCache")
     public ProjectInfo getProject(long projectId) {
         return restOperations.getForObject(registrationServerEndpoint + "/projects/" + projectId, ProjectInfo.class);
