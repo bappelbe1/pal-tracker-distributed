@@ -2,8 +2,8 @@ applications:
   - name: oauth-server
     path: build/libs/oauth-server.jar
     routes:
-      - route: uaa-bappelbe.cfapps.io
-    memory: 384M
+      - route: https://uaa-bappelbe.cfapps.io
+    memory: 200M
     env:
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 10} }'
       JAVA_OPTS: '-Xss256k -Xmx192m -XX:MaxMetaspaceSize=100m'
